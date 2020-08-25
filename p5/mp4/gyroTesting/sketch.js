@@ -14,10 +14,7 @@ var alreadyTouched = false;
 
 
 function setup() {
-
   createCanvas(windowWidth, windowHeight);
- // requestT() ;
-
   // initialize accelerometer variables
   alpha = 0;
   beta = 0;
