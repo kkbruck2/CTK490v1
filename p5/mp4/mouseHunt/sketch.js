@@ -1,3 +1,4 @@
+
 var chalk;
 var fontDiner;
 var grid;
@@ -18,6 +19,7 @@ var win;
 var lose;
 var winSound;
 var loseSound;
+
 //------------------------------------------------------var end
 //------------------------------------------------------preload
 function preload() {
