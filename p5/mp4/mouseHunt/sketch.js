@@ -84,30 +84,29 @@ function draw() {
   image(myfloor, width / 2, height / 2);
 
 
-  textFont(fontDiner);
-
-
   switch (myState) {
 
     case 0:
-      bkgMusic.play();
-      myState = 1;
-    case 1:
       fill(0);
+      textFont(montMed);
+      textSize(40);
+      text("Click to Start Game", width / 2, height - 35);
+      textFont(fontDiner);
       textSize(80);
       textAlign(CENTER);
       text("Let's Hunt Mice!", width / 2, 120);
       image(start, width / 2, height / 2 + 30);
-      winSound.stop();
-      loseSound.stop();
-      textSize(40);
-      textFont(montMed);
-      text("Click to Start Game", width / 2, height - 35);
-
 
       break;
 
+    case 1:
+      bkgMusic.play();
+      myState = 2;
+      break;
+
     case 2:
+      winSound.stop();
+      loseSound.stop();
       game();
       timer++;
       if (timer > 1000) {
@@ -124,13 +123,13 @@ function draw() {
 
     case 4: // the win state
       fill(0);
-        textFont(fontDiner);
       textSize(60);
       textAlign(CENTER);
-      text("Hee...Hee!       WE WON!", width / 2 - 15, 120);
+      textFont(fontDiner);
+      text("Hee..Hee!       WE WON!", width / 2 - 15, 120);
       image(win, width / 2, height / 2);
-      textSize(40);
       textFont(montMed);
+      textSize(40);
       text("Click to Reset Game", width / 2, height - 35);
 
       break;
@@ -143,15 +142,14 @@ function draw() {
 
     case 6: // the lose state
       fill(0);
-      textFont(fontDiner);
       textSize(60);
       textAlign(CENTER);
+      textFont(fontDiner);
       text("uh...oh!", width / 2, 120);
       image(lose, width / 2, 400);
-      textSize(40);
       textFont(montMed);
+      textSize(40);
       text("Click to Reset Game", width / 2, height - 35);
-
 
       break;
   }
